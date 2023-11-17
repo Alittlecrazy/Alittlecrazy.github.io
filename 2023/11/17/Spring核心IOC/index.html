@@ -9,7 +9,7 @@
     
     <title>
         
-            Spring详细介绍 |
+            Spring核心IOC |
         
         DaXian&#39;Blog
     </title>
@@ -204,7 +204,7 @@
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        Spring详细介绍
+                        Spring核心IOC
                     </div>
                 
 
@@ -233,13 +233,13 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-11-17 11:46:12</span>
-                <span class="mobile">2023-11-17 11:46</span>
+                <span class="pc">2023-11-17 22:28:04</span>
+                <span class="mobile">2023-11-17 22:28</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Fri Nov 17 2023 19:34:33 GMT+0800">2023-11-17 19:34:33</span>
+                <span class="pc" data-updated="Fri Nov 17 2023 22:29:29 GMT+0800">2023-11-17 22:29:29</span>
             </span>
         
 
@@ -265,6 +265,9 @@
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Spring/">Spring</a></li>
                         
                     
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/IOC/">IOC</a></li>
+                        
+                    
                 </ul>
             </span>
         
@@ -272,12 +275,12 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>420 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
             </span>
         
         
@@ -298,67 +301,31 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h2 id="1-Spring是什么"><a href="#1-Spring是什么" class="headerlink" title="1.Spring是什么"></a>1.Spring是什么</h2><p><strong>Spring框架</strong>是 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java" >Java<i class="fas fa-external-link-alt"></i></a> 平台的一个<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81" >开源<i class="fas fa-external-link-alt"></i></a>的全栈（<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%A8%E6%A0%88" >full-stack<i class="fas fa-external-link-alt"></i></a>）<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6" >应用程序框架<i class="fas fa-external-link-alt"></i></a>和<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC" >控制反转<i class="fas fa-external-link-alt"></i></a>容器实现，一般被直接称为 Spring。该框架的一些核心功能理论上可用于任何 Java 应用，但 Spring 还为基于<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Jakarta_EE" >Java企业版<i class="fas fa-external-link-alt"></i></a>平台构建的 Web 应用提供了大量的拓展支持。Spring 没有直接实现任何的编程模型，但它已经在 Java 社区中广为流行，基本上完全代替了<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/EJB" >企业级JavaBeans<i class="fas fa-external-link-alt"></i></a>（EJB）模型。</p>
-<p>Spring框架以 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Apache_License_2.0" >Apache License 2.0<i class="fas fa-external-link-alt"></i></a> 开源许可协议的形式发布，该框架最初由 Rod Johnson 以及 Juergen Hoeller 等人开发。</p>
-<h2 id="2-Spring对比EJB"><a href="#2-Spring对比EJB" class="headerlink" title="2.Spring对比EJB"></a>2.Spring对比EJB</h2><ul>
-<li><p><strong>EJB</strong></p>
-<p>1997 年， IBM提出了EJB 的思想 </p>
-<p>1998 年，SUN制定开发标准规范 EJB1.0 </p>
-<p>1999 年，EJB1.1 发布 </p>
-<p>2001 年，EJB2.0 发布 </p>
-<p>2003 年，EJB2.1 发布 </p>
-<p>2006 年，EJB3.0 发布</p>
-<p><strong>EJB存在以下问题</strong></p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 运行环境苛刻</span><br><span class="line">EJB项目需要运行在具有EJB容器的服务器上，像Tomcat就不具有EJB容器就无法运行EJB容器，Weblogic、Websphere具有EJB容器，但是这类服务器是收费的，普通小公司无法使用成本太高。此外Weblogic、Websphere因为是闭源的，当我们对容器不满意，我们是不能进行修改定制的。</span><br><span class="line"></span><br><span class="line"><span class="bullet">2.</span> 代码移植性差</span><br><span class="line">例EJB代码运行在Weblogic，就需要实现Weblogic特定的接口，假如想将代码移植到Websphere，代码是不能运行的，因为Websphere也有自己特定的接口需要实现，所以无法直接迁移</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>Spring</strong></p>
-<p>Spring是⼀个轻量级的JavaEE解决⽅案，整合众多优秀的设计模式</p>
-<ul>
-<li><p>轻量级</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 对运行环境没有额外要求</span><br><span class="line">开源：tomcat resion jetty</span><br><span class="line"><span class="bullet">2.</span> 代码移植性高</span><br><span class="line">不需要实现额外接口</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>JavaEE解决方案</p>
-<p>Controller：Struts2  Spring Service：Spring Dao：MyBatis Spring DB：</p>
-</li>
-<li><p>整合设计模式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 工厂</span><br><span class="line">2. 代理</span><br><span class="line">3. 模板</span><br><span class="line">4. 策略</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h2 id="3-版本历史"><a href="#3-版本历史" class="headerlink" title="3.版本历史"></a>3.版本历史</h2><ul>
-<li>第一版由 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Rod_Johnson&action=edit&redlink=1" >Rod Johnson<i class="fas fa-external-link-alt"></i></a> 开发，并在2002年10月发布在 <em>Expert One-on-One J2EE Design and Development</em> 一书中。</li>
-<li>2003年6月，Spring Framework 第一次发布在 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Apache%E8%AE%B8%E5%8F%AF%E8%AF%81" >Apache 2.0 许可证<i class="fas fa-external-link-alt"></i></a>下。</li>
-<li>2004年3月，发布了里程碑的版本1.0，2004年9月以及2005年3月，又发布了新的里程碑版本。</li>
-<li>2006年，Spring Framework 获得了 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Jolt_Awards&action=edit&redlink=1" >Jolt 生产力奖<i class="fas fa-external-link-alt"></i></a> 和 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=JAX_%E5%88%9B%E6%96%B0%E5%A5%96&action=edit&redlink=1" >JAX 创新奖<i class="fas fa-external-link-alt"></i></a>。</li>
-<li>2006年10月发布Spring 2.0。</li>
-<li>2007年11月 Spring 2.5。</li>
-<li>2009年12月 Spring 3.0。</li>
-<li>2011年 Spring 3.1。</li>
-<li>2013年11月 Spring 3.2.5。</li>
-<li>2013年12月发布了4.0版本，值得注意的是，Spring 4.0 版本中增加了对 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java_SE" >Java SE<i class="fas fa-external-link-alt"></i></a> 8, <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Groovy" >Groovy<i class="fas fa-external-link-alt"></i></a> 2, <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java_EE" >Java EE<i class="fas fa-external-link-alt"></i></a> 7 的一些方面以及 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/WebSocket" >WebSocket<i class="fas fa-external-link-alt"></i></a> 的支持。</li>
-<li>2017年9月 Spring Framework 正式发布了 5.0 版本，此版本引入了 Spring WebFlux，一个高性能、响应式、异步的 Web 框架。Spring 5.0 重点加强了对函数式编程、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B" >响应式程序设计<i class="fas fa-external-link-alt"></i></a>（reactive programming）的支持能力，是一个非常大的进步。</li>
-</ul>
-<h2 id="4-核心功能模块"><a href="#4-核心功能模块" class="headerlink" title="4.核心功能模块"></a>4.核心功能模块</h2><h3 id="4-1控制反转容器-依赖注入"><a href="#4-1控制反转容器-依赖注入" class="headerlink" title="4.1控制反转容器(依赖注入)"></a>4.1控制反转容器(依赖注入)</h3><p>控制反转（IOC，Inverse Of Control），即把创建对象的权利交给框架，也就是指将对象的创建、对象的存储、对象的管理交给了Spring容器。Spring容器是Spring中的一个核心模块，用于管理对象，底层可以理解为是一个Map集合。</p>
-<h3 id="4-2面向切面程序设计"><a href="#4-2面向切面程序设计" class="headerlink" title="4.2面向切面程序设计"></a>4.2面向切面程序设计</h3><p>面向切面程序设计（Aspect-Oriented Programming, AOP） 就是将那些与业务无关，却为业务模块所共同调用的逻辑或责任分开封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可操作性和可维护性。</p>
-<h3 id="4-3数据访问-Dao层支持"><a href="#4-3数据访问-Dao层支持" class="headerlink" title="4.3数据访问(Dao层支持)"></a>4.3数据访问(Dao层支持)</h3><p><strong>Spring Data</strong>实现了对数据访问接口的统一，支持多种数据库访问框架或组件（如：JDBC、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Hibernate" >Hibernate<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/MyBatis" >MyBatis<i class="fas fa-external-link-alt"></i></a>（<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/IBATIS" >iBatis<i class="fas fa-external-link-alt"></i></a>））作为最终数据访问的实现。</p>
-<h3 id="4-4事务管理"><a href="#4-4事务管理" class="headerlink" title="4.4事务管理"></a>4.4事务管理</h3><p>Spring框架为事务管理提供了一致的抽象，具有以下优点：</p>
-<ul>
-<li>跨不同事务API（如：<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java%E4%BA%8B%E5%8A%A1API" >Java事务<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/JDBC" >JDBC<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Hibernate" >Hibernate<i class="fas fa-external-link-alt"></i></a>和Java Persistence API事务（JPA））的一致编程模型</li>
-<li>支持声明式事务</li>
-<li>与诸如JTA之类的复杂事务API相比，用于过程化事务管理的API更简单</li>
-<li>与Spring的数据访问抽象出色地集成</li>
-</ul>
-<h3 id="4-5模型-视图-控制器"><a href="#4-5模型-视图-控制器" class="headerlink" title="4.5模型-视图-控制器"></a>4.5模型-视图-控制器</h3><p><strong>Spring MVC</strong> 实现了基于 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/MVC" >MVC<i class="fas fa-external-link-alt"></i></a> 设计方法的实现，结合基于<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java%E6%B3%A8%E8%A7%A3" >Java注解<i class="fas fa-external-link-alt"></i></a>的配置，允许开发者开发出低代码侵入的Web应用项目，并简便地实现大部分Web功能（包括请求参数注入、文件上传控制等）。</p>
-<h3 id="4-6远程访问"><a href="#4-6远程访问" class="headerlink" title="4.6远程访问"></a>4.6远程访问</h3><p>待补充</p>
-<h3 id="4-7”约定大于配置”的快速应用开发"><a href="#4-7”约定大于配置”的快速应用开发" class="headerlink" title="4.7”约定大于配置”的快速应用开发"></a>4.7”约定大于配置”的快速应用开发</h3><p>Spring Boot是基于Spring Framework 4.0派生的，用于快速搭建独立的基于生产级别的Spring应用的框架，可以以最小的依赖引入来构建一个Spring应用。并且它还具有以下特点：</p>
-<ul>
-<li>拥有嵌入式的Tomcat, Jetty, Undertow或者Reactor Netty（无需部署<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/.war" >war文件<i class="fas fa-external-link-alt"></i></a>）</li>
-<li>尽可能地自动配置（@AutoConfiguration）Spring和第三方库</li>
-<li>提供用于生产的功能，例如指标、运行状态检查和外部化配置</li>
-<li>无需麻烦而冗余的XML配置，一切都可以使用Java配置</li>
-</ul>
-<h3 id="4-8批处理"><a href="#4-8批处理" class="headerlink" title="4.8批处理"></a>4.8批处理</h3><p>待补充</p>
-<h3 id="4-9集成框架"><a href="#4-9集成框架" class="headerlink" title="4.9集成框架"></a>4.9集成框架</h3><p>待补充</p>
+                    <h2 id="1-工厂设计模式"><a href="#1-工厂设计模式" class="headerlink" title="1.工厂设计模式"></a>1.工厂设计模式</h2><blockquote>
+<p>概念：通过工厂类创建对象。</p>
+<p>好处：解耦合。</p>
+</blockquote>
+<blockquote>
+<p>耦合：指代码之间的强关联关系，一方的改变会影响另一方<br>问题：不利于代码维护<br>简单例子：把接⼝的实现类，硬编码在程序中<br>UserService userService &#x3D; new UserServiceImpl();</p>
+</blockquote>
+<h3 id="1-1简单工厂"><a href="#1-1简单工厂" class="headerlink" title="1.1简单工厂"></a>1.1简单工厂</h3><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">user</span>=<span class="string">com.springdemo.bean.User</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springdemo.factorydemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.springdemo.bean.User;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SimpleFactory</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Properties</span> <span class="variable">env</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">resourceAsStream</span> <span class="operator">=</span> SimpleFactory.class.getResourceAsStream(<span class="string">&quot;/applicationContext.properties&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            env.load(resourceAsStream);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建对象的方式有两种</span></span><br><span class="line">    <span class="comment">//1.直接new对象</span></span><br><span class="line">    <span class="comment">//2.通过反射</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> User <span class="title function_">getUser</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(env.getProperty(<span class="string">&quot;user&quot;</span>));</span><br><span class="line">            user = (User) clazz.newInstance();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (ClassNotFoundException | InstantiationException | IllegalAccessException e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2通用工厂"><a href="#1-2通用工厂" class="headerlink" title="1.2通用工厂"></a>1.2通用工厂</h3><p>简单工厂存在大量冗余代码，每创建一个类就需要写一个获取对象的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springdemo.factorydemo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.springdemo.bean.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UniversalFactory</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">Properties</span> <span class="variable">env</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">resourceAsStream</span> <span class="operator">=</span> SimpleFactory.class.getResourceAsStream(<span class="string">&quot;/applicationContext.properties&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            env.load(resourceAsStream);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建对象的方式有两种</span></span><br><span class="line">    <span class="comment">//1.直接new对象</span></span><br><span class="line">    <span class="comment">//2.通过反射</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Object <span class="title function_">getObject</span><span class="params">(String key)</span> &#123;</span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="type">Class</span> <span class="variable">clazz</span> <span class="operator">=</span> Class.forName(env.getProperty(key));</span><br><span class="line">            user = (User) clazz.newInstance();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (ClassNotFoundException | InstantiationException | IllegalAccessException e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-3通用工厂的使用"><a href="#1-3通用工厂的使用" class="headerlink" title="1.3通用工厂的使用"></a>1.3通用工厂的使用</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 定义类型 (类)</span><br><span class="line"><span class="bullet">2.</span> 通过配置⽂件的配置告知⼯⼚(applicationContext.properties)</span><br><span class="line">key = value</span><br><span class="line"><span class="bullet">3.</span> 通过⼯⼚获得类的对象</span><br><span class="line">Object ret = UniversalFactory.getBean(&quot;key&quot;)</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>Spring本质就是工厂  ApplicationContext就是个工厂  applicationContext.xml就是那个配置文件</p>
+</blockquote>
 
                 </div>
 
@@ -371,6 +338,10 @@
                                 
                                     <li class="tag-item border-box">
                                         <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Spring/">Spring</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/IOC/">IOC</a>
                                     </li>
                                 
                             </ul>
@@ -412,14 +383,14 @@
                             <div class="article-prev">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2023/11/17/Spring%E6%A0%B8%E5%BF%83IOC/"
-                                   title="Spring核心IOC"
+                                   href="/2023/11/17/Spring%E6%A0%B8%E5%BF%83AOP/"
+                                   title="Spring核心AOP"
                                 >
                                     <span class="left arrow-icon flex-center">
                                       <i class="fas fa-chevron-left"></i>
                                     </span>
                                             <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Spring核心IOC</span>
+                                        <span class="post-nav-title-item text-ellipsis">Spring核心AOP</span>
                                         <span class="post-nav-item">上一篇</span>
                                     </span>
                                 </a>
@@ -429,11 +400,11 @@
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/11/13/Spring5%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"
-                                   title="Spring5使用教程"
+                                   href="/2023/11/17/Spring%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/"
+                                   title="Spring详细介绍"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Spring5使用教程</span>
+                                        <span class="post-nav-title-item text-ellipsis">Spring详细介绍</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -461,7 +432,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Spring%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">1.Spring是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E5%AF%B9%E6%AF%94EJB"><span class="nav-text">2.Spring对比EJB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2"><span class="nav-text">3.版本历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="nav-text">4.核心功能模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E5%AE%B9%E5%99%A8-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-text">4.1控制反转容器(依赖注入)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="nav-text">4.2面向切面程序设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE-Dao%E5%B1%82%E6%94%AF%E6%8C%81"><span class="nav-text">4.3数据访问(Dao层支持)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="nav-text">4.4事务管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5%E6%A8%A1%E5%9E%8B-%E8%A7%86%E5%9B%BE-%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-text">4.5模型-视图-控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE"><span class="nav-text">4.6远程访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7%E2%80%9D%E7%BA%A6%E5%AE%9A%E5%A4%A7%E4%BA%8E%E9%85%8D%E7%BD%AE%E2%80%9D%E7%9A%84%E5%BF%AB%E9%80%9F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"><span class="nav-text">4.7”约定大于配置”的快速应用开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8%E6%89%B9%E5%A4%84%E7%90%86"><span class="nav-text">4.8批处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-9%E9%9B%86%E6%88%90%E6%A1%86%E6%9E%B6"><span class="nav-text">4.9集成框架</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-text">1.工厂设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82"><span class="nav-text">1.1简单工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E9%80%9A%E7%94%A8%E5%B7%A5%E5%8E%82"><span class="nav-text">1.2通用工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E9%80%9A%E7%94%A8%E5%B7%A5%E5%8E%82%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">1.3通用工厂的使用</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -630,7 +601,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Spring%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">1.Spring是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E5%AF%B9%E6%AF%94EJB"><span class="nav-text">2.Spring对比EJB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2"><span class="nav-text">3.版本历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="nav-text">4.核心功能模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E5%AE%B9%E5%99%A8-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-text">4.1控制反转容器(依赖注入)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="nav-text">4.2面向切面程序设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE-Dao%E5%B1%82%E6%94%AF%E6%8C%81"><span class="nav-text">4.3数据访问(Dao层支持)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="nav-text">4.4事务管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5%E6%A8%A1%E5%9E%8B-%E8%A7%86%E5%9B%BE-%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-text">4.5模型-视图-控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE"><span class="nav-text">4.6远程访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7%E2%80%9D%E7%BA%A6%E5%AE%9A%E5%A4%A7%E4%BA%8E%E9%85%8D%E7%BD%AE%E2%80%9D%E7%9A%84%E5%BF%AB%E9%80%9F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"><span class="nav-text">4.7”约定大于配置”的快速应用开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8%E6%89%B9%E5%A4%84%E7%90%86"><span class="nav-text">4.8批处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-9%E9%9B%86%E6%88%90%E6%A1%86%E6%9E%B6"><span class="nav-text">4.9集成框架</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-text">1.工厂设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82"><span class="nav-text">1.1简单工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E9%80%9A%E7%94%A8%E5%B7%A5%E5%8E%82"><span class="nav-text">1.2通用工厂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3%E9%80%9A%E7%94%A8%E5%B7%A5%E5%8E%82%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">1.3通用工厂的使用</span></a></li></ol></li></ol>
     </div>
 </div>
 
