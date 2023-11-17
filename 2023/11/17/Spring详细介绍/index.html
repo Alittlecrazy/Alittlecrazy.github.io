@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Da Xian">
+    
+    <title>
+        
+            Spring详细介绍 |
+        
+        DaXian&#39;Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"alittlecrazy.github.io","root":"/","language":"zh-CN","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"DaXian'Blog","author":"Da Xian","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"Home":"/","Archives":"/archives","Tags":"/tags","Categories":"/categories","Links":"/links","About":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":false,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"category":false,"tag":false,"announcement":null},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"jsdelivr"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"version":"4.0.0"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               DaXian&#39;Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/links"
+                            >
+                                友链
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/links">友链</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        Spring详细介绍
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Da Xian</span>
+                                
+                                    <span class="author-badge">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-11-17 11:46:12</span>
+                <span class="mobile">2023-11-17 11:46</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Fri Nov 17 2023 12:17:25 GMT+0800">2023-11-17 12:17:25</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/Spring/">Spring</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Spring/">Spring</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/">发展史</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item article-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.3k 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item article-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+            </span>
+        
+        
+            <span class="meta-info-item article-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h2 id="1-Spring是什么"><a href="#1-Spring是什么" class="headerlink" title="1.Spring是什么"></a>1.Spring是什么</h2><p><strong>Spring框架</strong>是 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java" >Java<i class="fas fa-external-link-alt"></i></a> 平台的一个<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BC%80%E6%94%BE%E6%BA%90%E4%BB%A3%E7%A0%81" >开源<i class="fas fa-external-link-alt"></i></a>的全栈（<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%A8%E6%A0%88" >full-stack<i class="fas fa-external-link-alt"></i></a>）<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6" >应用程序框架<i class="fas fa-external-link-alt"></i></a>和<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC" >控制反转<i class="fas fa-external-link-alt"></i></a>容器实现，一般被直接称为 Spring。该框架的一些核心功能理论上可用于任何 Java 应用，但 Spring 还为基于<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Jakarta_EE" >Java企业版<i class="fas fa-external-link-alt"></i></a>平台构建的 Web 应用提供了大量的拓展支持。Spring 没有直接实现任何的编程模型，但它已经在 Java 社区中广为流行，基本上完全代替了<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/EJB" >企业级JavaBeans<i class="fas fa-external-link-alt"></i></a>（EJB）模型。</p>
+<p>Spring框架以 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Apache_License_2.0" >Apache License 2.0<i class="fas fa-external-link-alt"></i></a> 开源许可协议的形式发布，该框架最初由 Rod Johnson 以及 Juergen Hoeller 等人开发。</p>
+<h2 id="2-Spring对比EJB"><a href="#2-Spring对比EJB" class="headerlink" title="2.Spring对比EJB"></a>2.Spring对比EJB</h2><ul>
+<li><p><strong>EJB</strong></p>
+<p>1997 年， IBM提出了EJB 的思想 </p>
+<p>1998 年，SUN制定开发标准规范 EJB1.0 </p>
+<p>1999 年，EJB1.1 发布 </p>
+<p>2001 年，EJB2.0 发布 </p>
+<p>2003 年，EJB2.1 发布 </p>
+<p>2006 年，EJB3.0 发布</p>
+<p><strong>EJB存在以下问题</strong></p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 运行环境苛刻</span><br><span class="line">EJB项目需要运行在具有EJB容器的服务器上，像Tomcat就不具有EJB容器就无法运行EJB容器，Weblogic、Websphere具有EJB容器，但是这类服务器是收费的，普通小公司无法使用成本太高。此外Weblogic、Websphere因为是闭源的，当我们对容器不满意，我们是不能进行修改定制的。</span><br><span class="line"></span><br><span class="line"><span class="bullet">2.</span> 代码移植性差</span><br><span class="line">例EJB代码运行在Weblogic，就需要实现Weblogic特定的接口，假如想将代码移植到Websphere，代码是不能运行的，因为Websphere也有自己特定的接口需要实现，所以无法直接迁移</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Spring</strong></p>
+<p>Spring是⼀个轻量级的JavaEE解决⽅案，整合众多优秀的设计模式</p>
+<ul>
+<li><p>轻量级</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 对运行环境没有额外要求</span><br><span class="line">开源：tomcat resion jetty</span><br><span class="line"><span class="bullet">2.</span> 代码移植性高</span><br><span class="line">不需要实现额外接口</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JavaEE解决方案</p>
+<p>Controller：Struts2  Spring Service：Spring Dao：MyBatis Spring DB：</p>
+</li>
+<li><p>整合设计模式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 工厂</span><br><span class="line">2. 代理</span><br><span class="line">3. 模板</span><br><span class="line">4. 策略</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-版本历史"><a href="#3-版本历史" class="headerlink" title="3.版本历史"></a>3.版本历史</h2><ul>
+<li>第一版由 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Rod_Johnson&action=edit&redlink=1" >Rod Johnson<i class="fas fa-external-link-alt"></i></a> 开发，并在2002年10月发布在 <em>Expert One-on-One J2EE Design and Development</em> 一书中。</li>
+<li>2003年6月，Spring Framework 第一次发布在 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Apache%E8%AE%B8%E5%8F%AF%E8%AF%81" >Apache 2.0 许可证<i class="fas fa-external-link-alt"></i></a>下。</li>
+<li>2004年3月，发布了里程碑的版本1.0，2004年9月以及2005年3月，又发布了新的里程碑版本。</li>
+<li>2006年，Spring Framework 获得了 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Jolt_Awards&action=edit&redlink=1" >Jolt 生产力奖<i class="fas fa-external-link-alt"></i></a> 和 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=JAX_%E5%88%9B%E6%96%B0%E5%A5%96&action=edit&redlink=1" >JAX 创新奖<i class="fas fa-external-link-alt"></i></a>。</li>
+<li>2006年10月发布Spring 2.0。</li>
+<li>2007年11月 Spring 2.5。</li>
+<li>2009年12月 Spring 3.0。</li>
+<li>2011年 Spring 3.1。</li>
+<li>2013年11月 Spring 3.2.5。</li>
+<li>2013年12月发布了4.0版本，值得注意的是，Spring 4.0 版本中增加了对 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java_SE" >Java SE<i class="fas fa-external-link-alt"></i></a> 8, <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Groovy" >Groovy<i class="fas fa-external-link-alt"></i></a> 2, <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java_EE" >Java EE<i class="fas fa-external-link-alt"></i></a> 7 的一些方面以及 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/WebSocket" >WebSocket<i class="fas fa-external-link-alt"></i></a> 的支持。</li>
+<li>2017年9月 Spring Framework 正式发布了 5.0 版本，此版本引入了 Spring WebFlux，一个高性能、响应式、异步的 Web 框架。Spring 5.0 重点加强了对函数式编程、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BC%96%E7%A8%8B" >响应式程序设计<i class="fas fa-external-link-alt"></i></a>（reactive programming）的支持能力，是一个非常大的进步。</li>
+</ul>
+<h2 id="4-核心功能模块"><a href="#4-核心功能模块" class="headerlink" title="4.核心功能模块"></a>4.核心功能模块</h2><h3 id="4-1控制反转容器-依赖注入"><a href="#4-1控制反转容器-依赖注入" class="headerlink" title="4.1控制反转容器(依赖注入)"></a>4.1控制反转容器(依赖注入)</h3><p>控制反转（IOC，Inverse Of Control），即把创建对象的权利交给框架，也就是指将对象的创建、对象的存储、对象的管理交给了Spring容器。Spring容器是Spring中的一个核心模块，用于管理对象，底层可以理解为是一个Map集合。</p>
+<h3 id="4-2面向切面程序设计"><a href="#4-2面向切面程序设计" class="headerlink" title="4.2面向切面程序设计"></a>4.2面向切面程序设计</h3><p>面向切面程序设计（Aspect-Oriented Programming, AOP） 就是将那些与业务无关，却为业务模块所共同调用的逻辑或责任分开封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可操作性和可维护性。</p>
+<h3 id="4-3数据访问-Dao层支持"><a href="#4-3数据访问-Dao层支持" class="headerlink" title="4.3数据访问(Dao层支持)"></a>4.3数据访问(Dao层支持)</h3><p><strong>Spring Data</strong>实现了对数据访问接口的统一，支持多种数据库访问框架或组件（如：JDBC、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Hibernate" >Hibernate<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/MyBatis" >MyBatis<i class="fas fa-external-link-alt"></i></a>（<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/IBATIS" >iBatis<i class="fas fa-external-link-alt"></i></a>））作为最终数据访问的实现。</p>
+<h3 id="4-4事务管理"><a href="#4-4事务管理" class="headerlink" title="4.4事务管理"></a>4.4事务管理</h3><p>Spring框架为事务管理提供了一致的抽象，具有以下优点：</p>
+<ul>
+<li>跨不同事务API（如：<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java%E4%BA%8B%E5%8A%A1API" >Java事务<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/JDBC" >JDBC<i class="fas fa-external-link-alt"></i></a>、<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Hibernate" >Hibernate<i class="fas fa-external-link-alt"></i></a>和Java Persistence API事务（JPA））的一致编程模型</li>
+<li>支持声明式事务</li>
+<li>与诸如JTA之类的复杂事务API相比，用于过程化事务管理的API更简单</li>
+<li>与Spring的数据访问抽象出色地集成</li>
+</ul>
+<h3 id="4-5模型-视图-控制器"><a href="#4-5模型-视图-控制器" class="headerlink" title="4.5模型-视图-控制器"></a>4.5模型-视图-控制器</h3><p><strong>Spring MVC</strong> 实现了基于 <a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/MVC" >MVC<i class="fas fa-external-link-alt"></i></a> 设计方法的实现，结合基于<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Java%E6%B3%A8%E8%A7%A3" >Java注解<i class="fas fa-external-link-alt"></i></a>的配置，允许开发者开发出低代码侵入的Web应用项目，并简便地实现大部分Web功能（包括请求参数注入、文件上传控制等）。</p>
+<h3 id="4-6远程访问"><a href="#4-6远程访问" class="headerlink" title="4.6远程访问"></a>4.6远程访问</h3><p>待补充</p>
+<h3 id="4-7”约定大于配置”的快速应用开发"><a href="#4-7”约定大于配置”的快速应用开发" class="headerlink" title="4.7”约定大于配置”的快速应用开发"></a>4.7”约定大于配置”的快速应用开发</h3><p>Spring Boot是基于Spring Framework 4.0派生的，用于快速搭建独立的基于生产级别的Spring应用的框架，可以以最小的依赖引入来构建一个Spring应用。并且它还具有以下特点：</p>
+<ul>
+<li>拥有嵌入式的Tomcat, Jetty, Undertow或者Reactor Netty（无需部署<a class="link"   target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/.war" >war文件<i class="fas fa-external-link-alt"></i></a>）</li>
+<li>尽可能地自动配置（@AutoConfiguration）Spring和第三方库</li>
+<li>提供用于生产的功能，例如指标、运行状态检查和外部化配置</li>
+<li>无需麻烦而冗余的XML配置，一切都可以使用Java配置</li>
+</ul>
+<h3 id="4-8批处理"><a href="#4-8批处理" class="headerlink" title="4.8批处理"></a>4.8批处理</h3><p>待补充</p>
+<h3 id="4-9集成框架"><a href="#4-9集成框架" class="headerlink" title="4.9集成框架"></a>4.9集成框架</h3><p>待补充</p>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Spring/">Spring</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8F%91%E5%B1%95%E5%8F%B2/">发展史</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到 QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="分享到微信"
+            data-tooltip-img-tip="微信扫一扫"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="分享到微博"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/11/13/Spring5%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"
+                                   title="Spring5使用教程"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Spring5使用教程</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Spring%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">1.Spring是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E5%AF%B9%E6%AF%94EJB"><span class="nav-text">2.Spring对比EJB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2"><span class="nav-text">3.版本历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="nav-text">4.核心功能模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E5%AE%B9%E5%99%A8-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-text">4.1控制反转容器(依赖注入)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="nav-text">4.2面向切面程序设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE-Dao%E5%B1%82%E6%94%AF%E6%8C%81"><span class="nav-text">4.3数据访问(Dao层支持)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="nav-text">4.4事务管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5%E6%A8%A1%E5%9E%8B-%E8%A7%86%E5%9B%BE-%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-text">4.5模型-视图-控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE"><span class="nav-text">4.6远程访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7%E2%80%9D%E7%BA%A6%E5%AE%9A%E5%A4%A7%E4%BA%8E%E9%85%8D%E7%BD%AE%E2%80%9D%E7%9A%84%E5%BF%AB%E9%80%9F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"><span class="nav-text">4.7”约定大于配置”的快速应用开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8%E6%89%B9%E5%A4%84%E7%90%86"><span class="nav-text">4.8批处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-9%E9%9B%86%E6%88%90%E6%A1%86%E6%9E%B6"><span class="nav-text">4.9集成框架</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Da Xian</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+                <span class="count-box border-box uv">
+                    <span class="item-type border-box">访客数</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-box border-box pv">
+                    <span class="item-type border-box">访问量</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Spring%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">1.Spring是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E5%AF%B9%E6%AF%94EJB"><span class="nav-text">2.Spring对比EJB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%89%88%E6%9C%AC%E5%8E%86%E5%8F%B2"><span class="nav-text">3.版本历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97"><span class="nav-text">4.核心功能模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E5%AE%B9%E5%99%A8-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-text">4.1控制反转容器(依赖注入)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1"><span class="nav-text">4.2面向切面程序设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE-Dao%E5%B1%82%E6%94%AF%E6%8C%81"><span class="nav-text">4.3数据访问(Dao层支持)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="nav-text">4.4事务管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5%E6%A8%A1%E5%9E%8B-%E8%A7%86%E5%9B%BE-%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-text">4.5模型-视图-控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE"><span class="nav-text">4.6远程访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7%E2%80%9D%E7%BA%A6%E5%AE%9A%E5%A4%A7%E4%BA%8E%E9%85%8D%E7%BD%AE%E2%80%9D%E7%9A%84%E5%BF%AB%E9%80%9F%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91"><span class="nav-text">4.7”约定大于配置”的快速应用开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8%E6%89%B9%E5%A4%84%E7%90%86"><span class="nav-text">4.8批处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-9%E9%9B%86%E6%88%90%E6%A1%86%E6%9E%B6"><span class="nav-text">4.9集成框架</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local-search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            
+<script src="/js/post/share.js"></script>
+
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
