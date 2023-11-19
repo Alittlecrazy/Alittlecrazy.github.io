@@ -9,7 +9,7 @@
     
     <title>
         
-            Spring持久层整合 |
+            IDEA快捷键 |
         
         DaXian&#39;Blog
     </title>
@@ -204,7 +204,7 @@
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        Spring持久层整合
+                        IDEA快捷键
                     </div>
                 
 
@@ -233,13 +233,13 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-11-19 15:00:08</span>
-                <span class="mobile">2023-11-19 15:00</span>
+                <span class="pc">2023-11-19 20:10:47</span>
+                <span class="mobile">2023-11-19 20:10</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Nov 19 2023 15:08:03 GMT+0800">2023-11-19 15:08:03</span>
+                <span class="pc" data-updated="Sun Nov 19 2023 20:13:33 GMT+0800">2023-11-19 20:13:33</span>
             </span>
         
 
@@ -247,10 +247,10 @@
             <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
                 <ul class="article-category-ul">
                     
-                            <li class="category-item"><a href="/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/">编程框架</a></li>
+                            <li class="category-item"><a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li>
                         
                     
-                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/%E7%BC%96%E7%A8%8B%E6%A1%86%E6%9E%B6/Spring/">Spring</a></li>
+                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/IDEA/">IDEA</a></li>
                         
                     
                 </ul>
@@ -262,7 +262,10 @@
                 <i class="icon fas fa-tags"></i>&nbsp;
                 <ul class="article-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Spring/">Spring</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/IDEA/">IDEA</a></li>
                         
                     
                 </ul>
@@ -272,12 +275,12 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>149 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>874 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 分钟</span>
             </span>
         
         
@@ -298,14 +301,310 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h2 id="1-持久层整合"><a href="#1-持久层整合" class="headerlink" title="1.持久层整合"></a>1.持久层整合</h2><h3 id="1-1Spring框架为什么要与持久层技术进行整合"><a href="#1-1Spring框架为什么要与持久层技术进行整合" class="headerlink" title="1.1Spring框架为什么要与持久层技术进行整合"></a>1.1Spring框架为什么要与持久层技术进行整合</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> JavaEE开发需要持久层进⾏数据库的访问操作。</span><br><span class="line"><span class="bullet">2.</span> JDBC Hibernate MyBatis进⾏持久开发过程存在⼤量的代码冗余</span><br><span class="line"><span class="bullet">3.</span> Spring基于模板设计模式对于上述的持久层技术进⾏了封装</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2Spring可以与那些持久层技术进行整合？"><a href="#2-2Spring可以与那些持久层技术进行整合？" class="headerlink" title="2.2Spring可以与那些持久层技术进行整合？"></a>2.2Spring可以与那些持久层技术进行整合？</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> JDBC</span><br><span class="line"> |- JDBCTemplate</span><br><span class="line"><span class="bullet">2.</span> Hibernate (JPA)</span><br><span class="line"> |- HibernateTemplate</span><br><span class="line"><span class="bullet">3.</span> MyBatis</span><br><span class="line"> |- SqlSessionFactoryBean MapperScannerConfigure</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-Spring与MyBatis整合"><a href="#2-Spring与MyBatis整合" class="headerlink" title="2.Spring与MyBatis整合"></a>2.Spring与MyBatis整合</h2><h3 id="2-1MyBatis开发步骤的回顾"><a href="#2-1MyBatis开发步骤的回顾" class="headerlink" title="2.1MyBatis开发步骤的回顾"></a>2.1MyBatis开发步骤的回顾</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 实体</span><br><span class="line"><span class="bullet">2.</span> 实体别名</span><br><span class="line"><span class="bullet">3.</span> 表</span><br><span class="line"><span class="bullet">4.</span> 创建DAO接⼝</span><br><span class="line"><span class="bullet">5.</span> 实现Mapper⽂件</span><br><span class="line"><span class="bullet">6.</span> 注册Mapper⽂件</span><br><span class="line"><span class="bullet">7.</span> MybatisAPI调⽤</span><br></pre></td></tr></table></figure>
-
+                    <h2 id="1-IDEA的日常快捷键"><a href="#1-IDEA的日常快捷键" class="headerlink" title="1-IDEA的日常快捷键"></a>1-IDEA的日常快捷键</h2><h3 id="第1组：通用型"><a href="#第1组：通用型" class="headerlink" title="第1组：通用型"></a>第1组：通用型</h3><table>
+<thead>
+<tr>
+<th>说明</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>复制代码-copy</td>
+<td>ctrl + c</td>
+</tr>
+<tr>
+<td>粘贴-paste</td>
+<td>ctrl + v</td>
+</tr>
+<tr>
+<td>剪切-cut</td>
+<td>ctrl + x</td>
+</tr>
+<tr>
+<td>撤销-undo</td>
+<td>ctrl + z</td>
+</tr>
+<tr>
+<td>反撤销-redo</td>
+<td>ctrl + shift + z</td>
+</tr>
+<tr>
+<td>保存-save all</td>
+<td>ctrl + s</td>
+</tr>
+<tr>
+<td>全选-select all</td>
+<td>ctrl + a</td>
+</tr>
+</tbody></table>
+<h3 id="第2组：提高编写速度（上）"><a href="#第2组：提高编写速度（上）" class="headerlink" title="第2组：提高编写速度（上）"></a>第2组：提高编写速度（上）</h3><table>
+<thead>
+<tr>
+<th>说明</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>智能提示-edit</td>
+<td>alt + enter</td>
+</tr>
+<tr>
+<td>提示代码模板-insert live template</td>
+<td>ctrl+j</td>
+</tr>
+<tr>
+<td>使用xx块环绕-surround with …</td>
+<td>ctrl+alt+t</td>
+</tr>
+<tr>
+<td>调出生成getter&#x2F;setter&#x2F;构造器等结构-generate …</td>
+<td>alt+insert</td>
+</tr>
+<tr>
+<td>自动生成返回值变量-introduce variable …</td>
+<td>ctrl+alt+v</td>
+</tr>
+<tr>
+<td>复制指定行的代码-duplicate line or selection</td>
+<td>ctrl+d</td>
+</tr>
+<tr>
+<td>删除指定行的代码-delete line</td>
+<td>ctrl+y</td>
+</tr>
+<tr>
+<td>切换到下一行代码空位-start new line</td>
+<td>shift + enter</td>
+</tr>
+<tr>
+<td>切换到上一行代码空位-start new line before current</td>
+<td>ctrl +alt+ enter</td>
+</tr>
+<tr>
+<td>向上移动代码-move statement up</td>
+<td>ctrl+shift+↑</td>
+</tr>
+<tr>
+<td>向下移动代码-move statement down</td>
+<td>ctrl+shift+↓</td>
+</tr>
+<tr>
+<td>向上移动一行-move line up</td>
+<td>alt+shift+↑</td>
+</tr>
+<tr>
+<td>向下移动一行-move line down</td>
+<td>alt+shift+↓</td>
+</tr>
+<tr>
+<td>方法的形参列表提醒-parameter info</td>
+<td>ctrl+p</td>
+</tr>
+</tbody></table>
+<h3 id="第3组：提高编写速度（下）"><a href="#第3组：提高编写速度（下）" class="headerlink" title="第3组：提高编写速度（下）"></a>第3组：提高编写速度（下）</h3><table>
+<thead>
+<tr>
+<th>说明</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>批量修改指定的变量名、方法名、类名等-rename</td>
+<td>shift+f6</td>
+</tr>
+<tr>
+<td>抽取代码重构方法-extract method …</td>
+<td>ctrl+alt+m</td>
+</tr>
+<tr>
+<td>重写父类的方法-override methods …</td>
+<td>ctrl+o</td>
+</tr>
+<tr>
+<td>实现接口的方法-implements methods …</td>
+<td>ctrl+i</td>
+</tr>
+<tr>
+<td>选中的结构的大小写的切换-toggle case</td>
+<td>ctrl+shift+u</td>
+</tr>
+<tr>
+<td>批量导包-optimize imports</td>
+<td>ctrl+alt+o</td>
+</tr>
+</tbody></table>
+<h3 id="第4组：类结构、查找和查看源码"><a href="#第4组：类结构、查找和查看源码" class="headerlink" title="第4组：类结构、查找和查看源码"></a>第4组：类结构、查找和查看源码</h3><table>
+<thead>
+<tr>
+<th>说明</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>如何查看源码-go to class…</td>
+<td>ctrl + 选中指定的结构 或 ctrl+n</td>
+</tr>
+<tr>
+<td>显示当前类结构，支持搜索指定的方法、属性等-file structure</td>
+<td>ctrl+f12</td>
+</tr>
+<tr>
+<td>退回到前一个编辑的页面-back</td>
+<td>ctrl+alt+←</td>
+</tr>
+<tr>
+<td>进入到下一个编辑的页面-forward</td>
+<td>ctrl+alt+→</td>
+</tr>
+<tr>
+<td>打开的类文件之间切换-select previous&#x2F;next tab</td>
+<td>alt+←&#x2F;→</td>
+</tr>
+<tr>
+<td>光标选中指定的类，查看继承树结构-Type Hierarchy</td>
+<td>ctrl+h</td>
+</tr>
+<tr>
+<td>查看方法文档-quick documentation</td>
+<td>ctrl+q</td>
+</tr>
+<tr>
+<td>类的UML关系图-show uml popup</td>
+<td>ctrl+alt+u</td>
+</tr>
+<tr>
+<td>定位某行-go to line&#x2F;column</td>
+<td>ctrl+g</td>
+</tr>
+<tr>
+<td>回溯变量或方法的来源-go to implementation(s)</td>
+<td>ctrl+alt+b</td>
+</tr>
+<tr>
+<td>折叠方法实现-collapse all</td>
+<td>ctrl+shift+ -</td>
+</tr>
+<tr>
+<td>展开方法实现-expand all</td>
+<td>ctrl+shift+ +</td>
+</tr>
+</tbody></table>
+<h3 id="第5组：查找、替换与关闭"><a href="#第5组：查找、替换与关闭" class="headerlink" title="第5组：查找、替换与关闭"></a>第5组：查找、替换与关闭</h3><table>
+<thead>
+<tr>
+<th>说明</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>查找指定的结构</td>
+<td>ctlr+f</td>
+</tr>
+<tr>
+<td>快速查找：选中的Word快速定位到下一个-find next</td>
+<td>ctrl+l</td>
+</tr>
+<tr>
+<td>查找与替换-replace</td>
+<td>ctrl+r</td>
+</tr>
+<tr>
+<td>直接定位到当前行的首位-move caret to line start</td>
+<td>home</td>
+</tr>
+<tr>
+<td>直接定位到当前行的末位 -move caret to line end</td>
+<td>end</td>
+</tr>
+<tr>
+<td>查询当前元素在当前文件中的引用，然后按 F3 可以选择</td>
+<td>ctrl+f7</td>
+</tr>
+<tr>
+<td>全项目搜索文本-find in path …</td>
+<td>ctrl+shift+f</td>
+</tr>
+<tr>
+<td>关闭当前窗口-close</td>
+<td>ctrl+f4</td>
+</tr>
+</tbody></table>
+<h3 id="第6组：调整格式"><a href="#第6组：调整格式" class="headerlink" title="第6组：调整格式"></a>第6组：调整格式</h3><table>
+<thead>
+<tr>
+<th>说明</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>格式化代码-reformat code</td>
+<td>ctrl+alt+l</td>
+</tr>
+<tr>
+<td>使用单行注释-comment with line comment</td>
+<td>ctrl + &#x2F;</td>
+</tr>
+<tr>
+<td>使用&#x2F;取消多行注释-comment with block comment</td>
+<td>ctrl + shift + &#x2F;</td>
+</tr>
+<tr>
+<td>选中数行，整体往后移动-tab</td>
+<td>tab</td>
+</tr>
+<tr>
+<td>选中数行，整体往前移动-prev tab</td>
+<td>shift + tab</td>
+</tr>
+</tbody></table>
+<h2 id="2-Debug快捷键"><a href="#2-Debug快捷键" class="headerlink" title="2-Debug快捷键"></a>2-Debug快捷键</h2><table>
+<thead>
+<tr>
+<th>说明</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单步调试（不进入函数内部）- step over</td>
+<td>F8</td>
+</tr>
+<tr>
+<td>单步调试（进入函数内部）- step into</td>
+<td>F7</td>
+</tr>
+<tr>
+<td>强制单步调试（进入函数内部） - force step into</td>
+<td>alt+shift+f7</td>
+</tr>
+<tr>
+<td>选择要进入的函数 - smart step into</td>
+<td>shift + F7</td>
+</tr>
+<tr>
+<td>跳出函数 - step out</td>
+<td>shift + F8</td>
+</tr>
+<tr>
+<td>运行到断点 - run to cursor</td>
+<td>alt + F9</td>
+</tr>
+<tr>
+<td>继续执行，进入下一个断点或执行完程序 - resume program</td>
+<td>F9</td>
+</tr>
+<tr>
+<td>停止 - stop</td>
+<td>Ctrl+F2</td>
+</tr>
+<tr>
+<td>查看断点 - view breakpoints</td>
+<td>Ctrl+Shift+F8</td>
+</tr>
+<tr>
+<td>关闭 - close</td>
+<td>Ctrl+F4</td>
+</tr>
+</tbody></table>
 
                 </div>
 
@@ -317,7 +616,11 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Spring/">Spring</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/IDEA/">IDEA</a>
                                     </li>
                                 
                             </ul>
@@ -356,31 +659,15 @@
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/11/19/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/"
-                                   title="IDEA快捷键"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">IDEA快捷键</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/11/19/Spring%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%87%E7%AD%BE/"
-                                   title="Spring自定义标签"
+                                   href="/2023/11/19/Spring%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88/"
+                                   title="Spring持久层整合"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Spring自定义标签</span>
+                                        <span class="post-nav-title-item text-ellipsis">Spring持久层整合</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -408,7 +695,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88"><span class="nav-text">1.持久层整合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1Spring%E6%A1%86%E6%9E%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%B8%8E%E6%8C%81%E4%B9%85%E5%B1%82%E6%8A%80%E6%9C%AF%E8%BF%9B%E8%A1%8C%E6%95%B4%E5%90%88"><span class="nav-text">1.1Spring框架为什么要与持久层技术进行整合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2Spring%E5%8F%AF%E4%BB%A5%E4%B8%8E%E9%82%A3%E4%BA%9B%E6%8C%81%E4%B9%85%E5%B1%82%E6%8A%80%E6%9C%AF%E8%BF%9B%E8%A1%8C%E6%95%B4%E5%90%88%EF%BC%9F"><span class="nav-text">2.2Spring可以与那些持久层技术进行整合？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E4%B8%8EMyBatis%E6%95%B4%E5%90%88"><span class="nav-text">2.Spring与MyBatis整合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1MyBatis%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4%E7%9A%84%E5%9B%9E%E9%A1%BE"><span class="nav-text">2.1MyBatis开发步骤的回顾</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-IDEA%E7%9A%84%E6%97%A5%E5%B8%B8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">1-IDEA的日常快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC1%E7%BB%84%EF%BC%9A%E9%80%9A%E7%94%A8%E5%9E%8B"><span class="nav-text">第1组：通用型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC2%E7%BB%84%EF%BC%9A%E6%8F%90%E9%AB%98%E7%BC%96%E5%86%99%E9%80%9F%E5%BA%A6%EF%BC%88%E4%B8%8A%EF%BC%89"><span class="nav-text">第2组：提高编写速度（上）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC3%E7%BB%84%EF%BC%9A%E6%8F%90%E9%AB%98%E7%BC%96%E5%86%99%E9%80%9F%E5%BA%A6%EF%BC%88%E4%B8%8B%EF%BC%89"><span class="nav-text">第3组：提高编写速度（下）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC4%E7%BB%84%EF%BC%9A%E7%B1%BB%E7%BB%93%E6%9E%84%E3%80%81%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9F%A5%E7%9C%8B%E6%BA%90%E7%A0%81"><span class="nav-text">第4组：类结构、查找和查看源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC5%E7%BB%84%EF%BC%9A%E6%9F%A5%E6%89%BE%E3%80%81%E6%9B%BF%E6%8D%A2%E4%B8%8E%E5%85%B3%E9%97%AD"><span class="nav-text">第5组：查找、替换与关闭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC6%E7%BB%84%EF%BC%9A%E8%B0%83%E6%95%B4%E6%A0%BC%E5%BC%8F"><span class="nav-text">第6组：调整格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Debug%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">2-Debug快捷键</span></a></li></ol>
     </div>
 </div>
 
@@ -577,7 +864,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88"><span class="nav-text">1.持久层整合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1Spring%E6%A1%86%E6%9E%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%B8%8E%E6%8C%81%E4%B9%85%E5%B1%82%E6%8A%80%E6%9C%AF%E8%BF%9B%E8%A1%8C%E6%95%B4%E5%90%88"><span class="nav-text">1.1Spring框架为什么要与持久层技术进行整合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2Spring%E5%8F%AF%E4%BB%A5%E4%B8%8E%E9%82%A3%E4%BA%9B%E6%8C%81%E4%B9%85%E5%B1%82%E6%8A%80%E6%9C%AF%E8%BF%9B%E8%A1%8C%E6%95%B4%E5%90%88%EF%BC%9F"><span class="nav-text">2.2Spring可以与那些持久层技术进行整合？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E4%B8%8EMyBatis%E6%95%B4%E5%90%88"><span class="nav-text">2.Spring与MyBatis整合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1MyBatis%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4%E7%9A%84%E5%9B%9E%E9%A1%BE"><span class="nav-text">2.1MyBatis开发步骤的回顾</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-IDEA%E7%9A%84%E6%97%A5%E5%B8%B8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">1-IDEA的日常快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC1%E7%BB%84%EF%BC%9A%E9%80%9A%E7%94%A8%E5%9E%8B"><span class="nav-text">第1组：通用型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC2%E7%BB%84%EF%BC%9A%E6%8F%90%E9%AB%98%E7%BC%96%E5%86%99%E9%80%9F%E5%BA%A6%EF%BC%88%E4%B8%8A%EF%BC%89"><span class="nav-text">第2组：提高编写速度（上）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC3%E7%BB%84%EF%BC%9A%E6%8F%90%E9%AB%98%E7%BC%96%E5%86%99%E9%80%9F%E5%BA%A6%EF%BC%88%E4%B8%8B%EF%BC%89"><span class="nav-text">第3组：提高编写速度（下）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC4%E7%BB%84%EF%BC%9A%E7%B1%BB%E7%BB%93%E6%9E%84%E3%80%81%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9F%A5%E7%9C%8B%E6%BA%90%E7%A0%81"><span class="nav-text">第4组：类结构、查找和查看源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC5%E7%BB%84%EF%BC%9A%E6%9F%A5%E6%89%BE%E3%80%81%E6%9B%BF%E6%8D%A2%E4%B8%8E%E5%85%B3%E9%97%AD"><span class="nav-text">第5组：查找、替换与关闭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC6%E7%BB%84%EF%BC%9A%E8%B0%83%E6%95%B4%E6%A0%BC%E5%BC%8F"><span class="nav-text">第6组：调整格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Debug%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">2-Debug快捷键</span></a></li></ol>
     </div>
 </div>
 
