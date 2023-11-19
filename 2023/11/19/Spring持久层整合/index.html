@@ -9,7 +9,7 @@
     
     <title>
         
-            Spring自定义标签 |
+            Spring持久层整合 |
         
         DaXian&#39;Blog
     </title>
@@ -204,7 +204,7 @@
             <div class="article-content-bottom border-box">
                 
                     <div class="article-title">
-                        Spring自定义标签
+                        Spring持久层整合
                     </div>
                 
 
@@ -233,13 +233,13 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2023-11-19 14:32:49</span>
-                <span class="mobile">2023-11-19 14:32</span>
+                <span class="pc">2023-11-19 15:00:08</span>
+                <span class="mobile">2023-11-19 15:00</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Sun Nov 19 2023 14:33:32 GMT+0800">2023-11-19 14:33:32</span>
+                <span class="pc" data-updated="Sun Nov 19 2023 15:08:03 GMT+0800">2023-11-19 15:08:03</span>
             </span>
         
 
@@ -272,12 +272,12 @@
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>365 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>149 字</span>
             </span>
         
         
             <span class="meta-info-item article-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
             </span>
         
         
@@ -298,23 +298,13 @@
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h2 id="1-定义xsd文件"><a href="#1-定义xsd文件" class="headerlink" title="1. 定义xsd文件"></a>1. 定义xsd文件</h2><p>user.xsd</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> ?&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">schema</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>  </span></span><br><span class="line"><span class="tag">        <span class="attr">targetNamespace</span>=<span class="string">&quot;http://www.baizhiedu.com/schema/user&quot;</span>  </span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:tns</span> = <span class="string">&quot;http://www.baizhiedu.com/schema/user&quot;</span>  </span></span><br><span class="line"><span class="tag">        <span class="attr">elementFormDefault</span>=<span class="string">&quot;qualified&quot;</span>&gt;</span>  </span><br><span class="line">  </span><br><span class="line">    <span class="tag">&lt;<span class="name">element</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">complexType</span>&gt;</span>            <span class="tag">&lt;<span class="name">attribute</span> <span class="attr">name</span>=<span class="string">&quot;id&quot;</span> <span class="attr">type</span>=<span class="string">&quot;string&quot;</span>/&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">attribute</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">type</span>=<span class="string">&quot;string&quot;</span>/&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">attribute</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">type</span>=<span class="string">&quot;string&quot;</span>/&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;/<span class="name">complexType</span>&gt;</span>    <span class="tag">&lt;/<span class="name">element</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">schema</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                    <h2 id="1-持久层整合"><a href="#1-持久层整合" class="headerlink" title="1.持久层整合"></a>1.持久层整合</h2><h3 id="1-1Spring框架为什么要与持久层技术进行整合"><a href="#1-1Spring框架为什么要与持久层技术进行整合" class="headerlink" title="1.1Spring框架为什么要与持久层技术进行整合"></a>1.1Spring框架为什么要与持久层技术进行整合</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> JavaEE开发需要持久层进⾏数据库的访问操作。</span><br><span class="line"><span class="bullet">2.</span> JDBC Hibernate MyBatis进⾏持久开发过程存在⼤量的代码冗余</span><br><span class="line"><span class="bullet">3.</span> Spring基于模板设计模式对于上述的持久层技术进⾏了封装</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-定义schemas文件"><a href="#2-定义schemas文件" class="headerlink" title="2. 定义schemas文件"></a>2. 定义schemas文件</h2><p>spring.schemas</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http\://www.baizhiedu.com/schema/user.xsd=META-INF/user.xsd</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-定义Handler文件"><a href="#3-定义Handler文件" class="headerlink" title="3. 定义Handler文件"></a>3. 定义Handler文件</h2><p>spring.Handlers</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http\://www.baizhiedu.com/schema/user=org.example.handler.MyNamespaceHandler</span><br></pre></td></tr></table></figure>
+<h3 id="2-2Spring可以与那些持久层技术进行整合？"><a href="#2-2Spring可以与那些持久层技术进行整合？" class="headerlink" title="2.2Spring可以与那些持久层技术进行整合？"></a>2.2Spring可以与那些持久层技术进行整合？</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> JDBC</span><br><span class="line"> |- JDBCTemplate</span><br><span class="line"><span class="bullet">2.</span> Hibernate (JPA)</span><br><span class="line"> |- HibernateTemplate</span><br><span class="line"><span class="bullet">3.</span> MyBatis</span><br><span class="line"> |- SqlSessionFactoryBean MapperScannerConfigure</span><br></pre></td></tr></table></figure>
 
 
-<h2 id="4-MyNamespaceHandler"><a href="#4-MyNamespaceHandler" class="headerlink" title="4. MyNamespaceHandler"></a>4. MyNamespaceHandler</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example.handler;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> org.example.parser.UserBeanDefinitionParser;  </span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.xml.NamespaceHandlerSupport;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyNamespaceHandler</span> <span class="keyword">extends</span> <span class="title class_">NamespaceHandlerSupport</span> &#123;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> &#123;  </span><br><span class="line">          registerBeanDefinitionParser(<span class="string">&quot;user&quot;</span>,<span class="keyword">new</span> <span class="title class_">UserBeanDefinitionParser</span>());  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="5-UserBeanDefinitionParser"><a href="#5-UserBeanDefinitionParser" class="headerlink" title="5.UserBeanDefinitionParser"></a>5.UserBeanDefinitionParser</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.example.parser;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> org.example.bean.User;  </span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.support.BeanDefinitionBuilder;  </span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.xml.AbstractSingleBeanDefinitionParser;  </span><br><span class="line"><span class="keyword">import</span> org.w3c.dom.Element;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UserBeanDefinitionParser</span> <span class="keyword">extends</span> <span class="title class_">AbstractSingleBeanDefinitionParser</span> &#123;  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">protected</span> Class&lt;?&gt; getBeanClass(Element element) &#123;  </span><br><span class="line">        <span class="keyword">return</span> User.class;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doParse</span><span class="params">(Element element, BeanDefinitionBuilder builder)</span> &#123;  </span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> element.getAttribute(<span class="string">&quot;name&quot;</span>);  </span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> element.getAttribute(<span class="string">&quot;password&quot;</span>);  </span><br><span class="line">  </span><br><span class="line">        builder.addPropertyValue(<span class="string">&quot;name&quot;</span>,name);  </span><br><span class="line">        builder.addPropertyValue(<span class="string">&quot;password&quot;</span>,password);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-applicationContext-xml"><a href="#6-applicationContext-xml" class="headerlink" title="6. applicationContext.xml"></a>6. applicationContext.xml</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span>  </span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>  </span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:jhm</span>=<span class="string">&quot;http://www.baizhiedu.com/schema/user&quot;</span>  </span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans  </span></span></span><br><span class="line"><span class="string"><span class="tag">                           http://www.springframework.org/schema/beans/spring-beans.xsd                           http://www.baizhiedu.com/schema/user                           http://www.baizhiedu.com/schema/user.xsd&quot;</span>&gt;</span>  </span><br><span class="line">  </span><br><span class="line">    <span class="tag">&lt;<span class="name">jhm:user</span> <span class="attr">id</span>=<span class="string">&quot;u&quot;</span> <span class="attr">name</span>=<span class="string">&quot;张三&quot;</span> <span class="attr">password</span>=<span class="string">&quot;123&quot;</span>/&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
+<h2 id="2-Spring与MyBatis整合"><a href="#2-Spring与MyBatis整合" class="headerlink" title="2.Spring与MyBatis整合"></a>2.Spring与MyBatis整合</h2><h3 id="2-1MyBatis开发步骤的回顾"><a href="#2-1MyBatis开发步骤的回顾" class="headerlink" title="2.1MyBatis开发步骤的回顾"></a>2.1MyBatis开发步骤的回顾</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">1.</span> 实体</span><br><span class="line"><span class="bullet">2.</span> 实体别名</span><br><span class="line"><span class="bullet">3.</span> 表</span><br><span class="line"><span class="bullet">4.</span> 创建DAO接⼝</span><br><span class="line"><span class="bullet">5.</span> 实现Mapper⽂件</span><br><span class="line"><span class="bullet">6.</span> 注册Mapper⽂件</span><br><span class="line"><span class="bullet">7.</span> MybatisAPI调⽤</span><br></pre></td></tr></table></figure>
 
 
                 </div>
@@ -366,31 +356,15 @@
                 
                     <div class="article-nav">
                         
-                            <div class="article-prev">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2023/11/19/Spring%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88/"
-                                   title="Spring持久层整合"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                      <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                            <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Spring持久层整合</span>
-                                        <span class="post-nav-item">上一篇</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2023/11/17/Spring%E6%A0%B8%E5%BF%83AOP/"
-                                   title="Spring核心AOP"
+                                   href="/2023/11/19/Spring%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%87%E7%AD%BE/"
+                                   title="Spring自定义标签"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Spring核心AOP</span>
+                                        <span class="post-nav-title-item text-ellipsis">Spring自定义标签</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
@@ -418,7 +392,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%9A%E4%B9%89xsd%E6%96%87%E4%BB%B6"><span class="nav-text">1. 定义xsd文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%9A%E4%B9%89schemas%E6%96%87%E4%BB%B6"><span class="nav-text">2. 定义schemas文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%AE%9A%E4%B9%89Handler%E6%96%87%E4%BB%B6"><span class="nav-text">3. 定义Handler文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-MyNamespaceHandler"><span class="nav-text">4. MyNamespaceHandler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-UserBeanDefinitionParser"><span class="nav-text">5.UserBeanDefinitionParser</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-applicationContext-xml"><span class="nav-text">6. applicationContext.xml</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88"><span class="nav-text">1.持久层整合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1Spring%E6%A1%86%E6%9E%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%B8%8E%E6%8C%81%E4%B9%85%E5%B1%82%E6%8A%80%E6%9C%AF%E8%BF%9B%E8%A1%8C%E6%95%B4%E5%90%88"><span class="nav-text">1.1Spring框架为什么要与持久层技术进行整合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2Spring%E5%8F%AF%E4%BB%A5%E4%B8%8E%E9%82%A3%E4%BA%9B%E6%8C%81%E4%B9%85%E5%B1%82%E6%8A%80%E6%9C%AF%E8%BF%9B%E8%A1%8C%E6%95%B4%E5%90%88%EF%BC%9F"><span class="nav-text">2.2Spring可以与那些持久层技术进行整合？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E4%B8%8EMyBatis%E6%95%B4%E5%90%88"><span class="nav-text">2.Spring与MyBatis整合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1MyBatis%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4%E7%9A%84%E5%9B%9E%E9%A1%BE"><span class="nav-text">2.1MyBatis开发步骤的回顾</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -587,7 +561,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%9A%E4%B9%89xsd%E6%96%87%E4%BB%B6"><span class="nav-text">1. 定义xsd文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%9A%E4%B9%89schemas%E6%96%87%E4%BB%B6"><span class="nav-text">2. 定义schemas文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%AE%9A%E4%B9%89Handler%E6%96%87%E4%BB%B6"><span class="nav-text">3. 定义Handler文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-MyNamespaceHandler"><span class="nav-text">4. MyNamespaceHandler</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-UserBeanDefinitionParser"><span class="nav-text">5.UserBeanDefinitionParser</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-applicationContext-xml"><span class="nav-text">6. applicationContext.xml</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%8C%81%E4%B9%85%E5%B1%82%E6%95%B4%E5%90%88"><span class="nav-text">1.持久层整合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1Spring%E6%A1%86%E6%9E%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%B8%8E%E6%8C%81%E4%B9%85%E5%B1%82%E6%8A%80%E6%9C%AF%E8%BF%9B%E8%A1%8C%E6%95%B4%E5%90%88"><span class="nav-text">1.1Spring框架为什么要与持久层技术进行整合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2Spring%E5%8F%AF%E4%BB%A5%E4%B8%8E%E9%82%A3%E4%BA%9B%E6%8C%81%E4%B9%85%E5%B1%82%E6%8A%80%E6%9C%AF%E8%BF%9B%E8%A1%8C%E6%95%B4%E5%90%88%EF%BC%9F"><span class="nav-text">2.2Spring可以与那些持久层技术进行整合？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E4%B8%8EMyBatis%E6%95%B4%E5%90%88"><span class="nav-text">2.Spring与MyBatis整合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1MyBatis%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4%E7%9A%84%E5%9B%9E%E9%A1%BE"><span class="nav-text">2.1MyBatis开发步骤的回顾</span></a></li></ol></li></ol>
     </div>
 </div>
 
