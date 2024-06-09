@@ -6,10 +6,8 @@ export default defineUserConfig({
 
   lang: "zh-CN",
   title: "Code wins arguments",
-  description: "代码胜于雄辩",
+  description: "",
 
   theme,
 
-  // 和 PWA 一起启用
-  // shouldPrefetch: false,
 });

@@ -6,34 +6,34 @@ heroImage: /logo.svg
 bgImageStyle:
   background-attachment: fixed
 heroText: Done is better than Perfect
-tagline: 完成胜于完美
+tagline: 
 actions:
   - text: 开始阅读
-    link: ./demo/
+    link: ./Java/
     type: primary
 
-  - text: 文档
+  - text: 网址导航
     link: ./guide/
     type: default
     
 features:
 
-  - title: 声明式配置
+  - title: 数据结构和算法
     icon: code
-    details: 声明式配置系统，方便配置管理和可重复性构建
+    details: 
     link: /guide/lang
 
-  - title: 依赖管理
+  - title: 操作系统
     icon: relation
-    details: 纯函数式包管理，易于管理依赖和版本控制
+    details: 
 
-  - title: 更新与回滚
+  - title: 计算机网络
     icon: update
-    details: 原子化升级和回滚，确保系统一致性和可靠性
+    details: 
 
-  - title: 安全稳定
+  - title: 计算机组成原理
     icon: safe
-    details: 支持沙盒化和同时安装多个版本的软件包
+    details: 
 
 copyright: false
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2019-至今 DaXian
