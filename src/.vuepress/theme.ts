@@ -3,18 +3,19 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://alittlecrazy.github.io/",
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
+    name: "DaXian"
   },
 
   iconAssets: "fontawesome-with-brands",
 
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
+  logo: "/logo.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  favicon: "/logo.ico",
+
+  repo: "https://github.com/Alittlecrazy/Alittlecrazy.github.io",
 
   docsDir: "src",
 
@@ -46,13 +47,13 @@ export default hopeTheme({
   // 在这里配置主题提供的插件
   plugins: {
     // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
-    comment: {
+/*    comment: {
       provider: "Giscus",
       repo: "vuepress-theme-hope/giscus-discussions",
       repoId: "R_kgDOG_Pt2A",
       category: "Announcements",
       categoryId: "DIC_kwDOG_Pt2M4COD69",
-    },
+    },*/
 
     components: {
       components: ["Badge", "VPCard"],
@@ -132,7 +133,7 @@ export default hopeTheme({
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
     // pwa: {
-    //   favicon: "/favicon.ico",
+    //   favicon: "/logo.ico",
     //   cacheHTML: true,
     //   cacheImage: true,
     //   appendBase: true,
