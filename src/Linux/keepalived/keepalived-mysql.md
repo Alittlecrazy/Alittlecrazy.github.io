@@ -118,6 +118,12 @@ vrrp_instance VI_1 {
 
 ```
 
+## 添加vrrp协议到防火墙
+```shell
+firewall-cmd --permanent --add-protocol=vrrp
+firewall-cmd --reload
+```
+
 ## 启动keepalived
 
 ```shell
