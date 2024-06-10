@@ -13,5 +13,17 @@ export default navbar([
         link: "MySql/"
       }
     ],
+  },
+  {
+    text: "Linux",
+    icon: "fa-brands fa-linux",
+    prefix: "/Linux/",
+    children: [
+      {
+        text: "Keepalived",
+        icon: "fa-solid fa-bars",
+        link: "keepalived/"
+      }
+    ],
   }
 ]);
