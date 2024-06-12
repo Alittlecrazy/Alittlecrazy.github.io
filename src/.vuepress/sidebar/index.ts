@@ -1,11 +1,13 @@
 import { sidebar } from "vuepress-theme-hope";
 import { MySql } from "./MySql.js";
 import { Linux } from "./Linux.js";
+import { Redis } from "./Redis.js";
 
 
 export default sidebar({
     "/DB/MySql/":MySql,
     "/Linux/":Linux,
+    "/DB/Redis/":Redis,
     "/": [
       "",
       {

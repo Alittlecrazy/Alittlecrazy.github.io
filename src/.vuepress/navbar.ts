@@ -11,6 +11,11 @@ export default navbar([
         text: "MySql",
         icon: "fa-solid fa-database",
         link: "MySql/"
+      },
+      {
+        text: "Redis",
+        icon: "fa-solid fa-registered",
+        link: "Redis/"
       }
     ],
   },
