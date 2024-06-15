@@ -18,9 +18,12 @@ export default sidebar({
         children: [{
             text: "基础",
             prefix: "basis/",
-            icon: "basic",
             children:[]
-          }
+          },{
+            text: "可执行命令",
+            prefix: "command/",
+            children:["Java-Commond-KeyTool"]
+        }
         ]
       }
     ]
