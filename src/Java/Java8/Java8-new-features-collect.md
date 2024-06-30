@@ -19,7 +19,7 @@ list.add(new Student(4,28,"M","zhaoliu"));
 
 //根据性别分组
 Map<String, List<Student>> map = list.stream().collect(Collectors.groupingBy(Student::getSex));
-System.out.println(map);
+System.out.println(map); 
 
 
 ```
