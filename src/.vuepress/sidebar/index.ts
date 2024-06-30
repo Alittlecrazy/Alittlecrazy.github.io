@@ -30,7 +30,10 @@ export default sidebar({
             children:["Java8-new-features-interface",
                     "Java8-new-features-lambda",
                     "Java8-new-features-FunctionalInterface",
-                    "Java8-new-features-method-ref"]
+                    "Java8-new-features-method-ref",
+                    "Java8-new-features-stream",
+                    "Java8-new-features-collect",
+                    "Java8-new-features-Optional"]
         }
         ]
       }
