@@ -3,7 +3,7 @@ title: Redis安装(Docker版)
 index: 1
 category: 数据库
 tag:
-  - Redis
+  - redis
 ---
 
 ## 1.拉取redis镜像
