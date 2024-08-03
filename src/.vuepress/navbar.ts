@@ -30,5 +30,15 @@ export default navbar([
         link: "keepalived/"
       }
     ],
+  },{
+    text: "框架",
+    icon: "fa-solid fa-crop-simple",
+    prefix: "/Framework/",
+    children: [
+      {
+        text: "MybatisPlus",
+        link: "MybatisPlus/"
+      }
+    ],
   }
 ]);
